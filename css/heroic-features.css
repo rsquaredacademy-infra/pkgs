@@ -33,3 +33,10 @@ footer {
 .navbar-inverse .navbar-nav > li > a {
   color: #fff;
 }
+
+/* P0 responsive guard: fluid images never overflow their column (fixes
+   horizontal scroll + off-screen nav toggle on mobile, card overlap on tablet) */
+img {
+    max-width: 100%;
+    height: auto;
+}
