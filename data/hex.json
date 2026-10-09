@@ -1,34 +1,34 @@
 {
   "olsrr": {
-    "width": 216,
-    "height": 250
+    "width": 172,
+    "height": 200
   },
   "blorr": {
-    "width": 216,
-    "height": 250
+    "width": 172,
+    "height": 200
   },
   "xplorerr": {
-    "width": 216,
-    "height": 250
+    "width": 172,
+    "height": 200
   },
   "descriptr": {
-    "width": 216,
-    "height": 250
+    "width": 172,
+    "height": 200
   },
   "inferr": {
-    "width": 216,
-    "height": 250
+    "width": 172,
+    "height": 200
   },
   "vistributions": {
-    "width": 216,
-    "height": 250
+    "width": 172,
+    "height": 200
   },
   "rbin": {
-    "width": 216,
-    "height": 250
+    "width": 172,
+    "height": 200
   },
   "rfm": {
-    "width": 216,
-    "height": 250
+    "width": 172,
+    "height": 200
   }
 }
