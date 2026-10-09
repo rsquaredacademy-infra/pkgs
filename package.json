@@ -1,0 +1,13 @@
+{
+  "name": "pkgs-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "pkgs.rsquaredacademy.com - Rsquared Academy R packages portal",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
