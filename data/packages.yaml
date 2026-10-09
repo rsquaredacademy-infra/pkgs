@@ -1,0 +1,155 @@
+# Single source of truth for the package catalog on pkgs.rsquaredacademy.com.
+# Rendered by build.mjs into index.html - never hand-edit index.html.
+# Conventions: github -> rsquaredacademy/<name>, docs -> https://<name>.rsquaredacademy.com,
+# hex -> images/hex-<name>.webp. Specify a field only to override the convention.
+# Unreleased pipeline packages are NEVER listed here (public repo embargo).
+
+- name: olsrr
+  tagline: "Tools for building linear regression models."
+  blurb: "Diagnostics, variable selection and influence measures for a fitted `lm`."
+  features:
+    - Comprehensive Regression Output
+    - Variable Selection Procedures
+    - Heteroskedasticity Tests
+    - Collinearity Diagnostics
+    - Model Fit Assessment
+    - Measures of Influence
+    - Residual Diagnostics
+  track: flagship
+  category: regression
+  cran: true
+  status: active
+
+- name: blorr
+  tagline: "Tools for building binary logistic regression models."
+  blurb: "Model fit, validation and collinearity for a fitted `glm` with a binary outcome."
+  features:
+    - Bivariate Analysis
+    - Model Fit Statistics
+    - Model Validation
+    - Variable Selection
+    - Residual Diagnostics
+    - Collinearity Diagnostics
+    - Visualization
+  track: flagship
+  category: regression
+  cran: true
+  status: active
+
+- name: xplorerr
+  tagline: "Tools for interactive data analysis."
+  blurb: "Descriptive, inferential and visual analysis behind a Shiny interface. See https://apps.rsquaredacademy.com/."
+  features:
+    - Descriptive Statistics
+    - Inferential Statistics
+    - Visualize Probability Distributions
+    - Data Visualization
+    - RFM Analysis
+    - Linear Regression
+    - Logistic Regression
+  track: flagship
+  category: regression
+  cran: true
+  status: active
+
+- name: descriptr
+  tagline: "Tools for generating descriptive and summary statistics."
+  blurb: "The fastest way to screen a data frame before you model it."
+  features:
+    - Data Screening
+    - Summary Statistics
+    - Frequency Tables
+    - Cross Tables
+    - Data Visualization
+  track: flagship
+  category: statistics
+  cran: true
+  status: active
+
+- name: inferr
+  tagline: "Tools for inferential statistics."
+  blurb: "Hypothesis tests with plain R syntax — no formulas to memorise."
+  features:
+    - Binomial Test
+    - Test of Proportion
+    - t Test
+    - Chi Square Test
+    - Levene’s Test
+    - Test of Variance
+    - McNemar Test
+    - Cochran Q Test
+    - Runs Test
+  track: flagship
+  category: statistics
+  cran: true
+  status: active
+
+- name: vistributions
+  tagline: "Tools for visualizing probability distributions."
+  blurb: "Plot the binomial, chi square, normal, F and t distributions. See https://apps.rsquaredacademy.com/."
+  features:
+    - Binomial Distribution
+    - Chi Square Distribution
+    - Normal Distribution
+    - f Distribution
+    - t Distribution
+    - Includes Shiny App
+  track: flagship
+  category: statistics
+  cran: true
+  status: active
+
+- name: rbin
+  tagline: "Tools for binning data."
+  blurb: "Turn continuous variables into factors, and generate dummy variables from them."
+  features:
+    - Manual Binning
+    - Quantile Binning
+    - Winsorized Binning
+    - Equal Length Binning
+    - Equal Width Binning
+    - Factor Binning
+    - Generate Dummy Variables
+    - Includes RStudio Addins
+  track: flagship
+  category: wrangling
+  cran: true
+  status: active
+
+- name: rfm
+  tagline: "Tools for RFM analysis."
+  blurb: "Score and segment customers from transaction-level data. See https://apps.rsquaredacademy.com/."
+  features:
+    - Generate RFM Scores
+    - Handles Transaction / Customer Level Data
+    - Visualization Tools
+    - Segment Customers
+    - Includes Shiny App
+  track: flagship
+  category: wrangling
+  cran: true
+  status: maintenance
+
+- name: yahoofinancer
+  tagline: "Fetch stock and index data from Yahoo! Finance."
+  track: utility
+  category: utilities
+  cran: true
+  status: active
+
+- name: standby
+  tagline: "Save, load and manage R processes and sessions."
+  track: utility
+  category: utilities
+  cran: true
+  status: active
+
+- name: nse2r
+  tagline: "Fetched data from the National Stock Exchange of India."
+  blurb: "No longer installable from CRAN. Source and issue tracker are on GitHub."
+  archived: "2023-08-07"
+  revival: "v0.1.6, under revival"
+  track: archived
+  category: archived
+  cran: true
+  status: archived
