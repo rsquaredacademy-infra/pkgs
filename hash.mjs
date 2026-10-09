@@ -7,6 +7,6 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
-const src = readFileSync(path.join(root, "js/theme-init.js"), "utf8");
+const src = readFileSync(path.join(root, "js/theme-init.js"), "utf8").replace(/\r\n/g, "\n");
 const hash = createHash("sha256").update(src, "utf8").digest("base64");
 console.log(`'sha256-${hash}'`);

@@ -277,7 +277,8 @@ const indent = (block, spaces) =>
 
 export function render(pkgs) {
   const template = readFileSync(path.join(root, "templates/index.html"), "utf8");
-  const init = readFileSync(path.join(root, "js/theme-init.js"), "utf8");
+  // normalize to LF so the inlined script always matches the CSP hash (npm run hash)
+  const init = readFileSync(path.join(root, "js/theme-init.js"), "utf8").replace(/\r\n/g, "\n");
   const html = template
     .replace("{{THEME_INIT}}", `<script>${init}</script>`)
     .replace("{{JSONLD}}", jsonLd(pkgs))
