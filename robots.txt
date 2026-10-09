@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pkgs.rsquaredacademy.com/sitemap.xml
