@@ -5,7 +5,8 @@
   "description": "pkgs.rsquaredacademy.com - Rsquared Academy R packages portal",
   "type": "module",
   "scripts": {
-    "build": "node build.mjs"
+    "build": "node build.mjs",
+    "hash": "node hash.mjs"
   },
   "devDependencies": {
     "js-yaml": "^4.1.0"

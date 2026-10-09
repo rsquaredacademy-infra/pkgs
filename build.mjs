@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, writeFileSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import path from "node:path";
 import yaml from "js-yaml";
@@ -24,6 +24,14 @@ const RELEASED = [
 const TRACKS = ["flagship", "utility", "archived"];
 const CATEGORIES = ["regression", "statistics", "wrangling", "utilities", "archived"];
 const STATUSES = ["active", "maintenance", "pending-cran", "deprecated", "archived"];
+
+const SECTIONS = [
+  { id: "regression", title: "Regression and modelling" },
+  { id: "statistics", title: "Descriptive and inferential statistics" },
+  { id: "wrangling", title: "Data wrangling and segmentation" },
+  { id: "utilities", title: "Utilities" },
+  { id: "archived", title: "Archived" },
+];
 
 export function loadCatalog() {
   const raw = readFileSync(path.join(root, "data/packages.yaml"), "utf8");
@@ -97,7 +105,6 @@ export function validate(pkgs) {
       err("flagship packages need a features list");
     }
     if (p.track === "flagship" && !existsSync(path.join(root, hexPath(p)))) {
-      // WebP conversion lands in Phase 3; until then this is a warning, not a failure.
       warnings.push(`${at}: hex asset missing: ${hexPath(p)}`);
     }
     if (p.track === "archived") {
@@ -111,6 +118,175 @@ export function validate(pkgs) {
   }
 
   return { errors, warnings };
+}
+
+/* ---------- rendering ---------- */
+
+const esc = (s) =>
+  String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+
+// backticks in YAML become inline <code> (e.g. "a fitted `lm`")
+const inlineCode = (s) => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>");
+
+let hexDimsCache = null;
+function hexDims(name) {
+  if (hexDimsCache === null) {
+    try {
+      hexDimsCache = JSON.parse(readFileSync(path.join(root, "data/hex.json"), "utf8"));
+    } catch {
+      hexDimsCache = {};
+    }
+  }
+  return hexDimsCache[name] ?? null;
+}
+
+function actions(p) {
+  const links = [];
+  if (p.cran !== false) {
+    links.push({
+      href: cranUrl(p),
+      label: p.track === "archived" ? "CRAN (archived)" : "CRAN",
+    });
+  }
+  links.push({ href: githubUrl(p), label: "GitHub", primary: p.track === "archived" });
+  if (p.track !== "archived") {
+    links.push({ href: docsUrl(p), label: "Docs" });
+  }
+  const buttons = links
+    .map(
+      (l) =>
+        `<a class="lbtn${l.primary ? " primary" : ""}" href="${esc(l.href)}">${esc(l.label)}</a>`,
+    )
+    .join("");
+  return `<div class="lactions"><div class="lactions-row">${buttons}</div></div>`;
+}
+
+function metaLine(p) {
+  if (p.status === "maintenance") {
+    return '<p class="lmeta"><span class="lpill">Maintenance mode</span> bug fixes only</p>';
+  }
+  if (p.track === "archived") {
+    const revival = p.revival ? ` ${esc(p.revival)}` : "";
+    return `<p class="lmeta"><span class="lpill arch">Archived ${esc(p.archived)}</span>${revival}</p>`;
+  }
+  return "";
+}
+
+function blurbBox(p) {
+  return p.blurb ? `<p class="lprereq">${inlineCode(p.blurb)}</p>` : "";
+}
+
+function detailsBox(p) {
+  if (!(p.features ?? []).length) return "";
+  const items = p.features.map((f) => `<li>${esc(f)}</li>`).join("");
+  return `<details><summary>What's inside</summary><ul>${items}</ul></details>`;
+}
+
+function card(p) {
+  if (p.track === "flagship") {
+    const dims = hexDims(p.name);
+    const size = dims ? ` width="${dims.width}" height="${dims.height}"` : "";
+    return `<article class="lcard lcard-h" id="${p.name}">
+  <div class="lside">
+    <img class="lcover lcover-hex" src="${esc(hexPath(p))}" alt="${esc(p.name)} hex sticker"${size} loading="lazy" decoding="async">
+    ${actions(p)}
+  </div>
+  <div class="lbody">
+    <p class="ltrack">Flagship</p>
+    <h3><a href="${esc(docsUrl(p))}">${esc(p.name)}</a></h3>
+    <p class="lout">${esc(p.tagline)}</p>
+    ${metaLine(p)}
+    ${blurbBox(p)}
+    ${detailsBox(p)}
+  </div>
+</article>`;
+  }
+
+  if (p.track === "archived") {
+    const nameLink = `<h3><a href="${esc(githubUrl(p))}">${esc(p.name)}</a></h3>`;
+    return `<article class="lcard" id="${p.name}">
+  <div class="lbody">
+    <p class="ltrack arch">Archived</p>
+    ${nameLink}
+    <p class="lout">${esc(p.tagline)}</p>
+    ${metaLine(p)}
+    ${blurbBox(p)}
+    ${actions(p)}
+  </div>
+</article>`;
+  }
+
+  return `<article class="lcard" id="${p.name}">
+  <div class="lbody">
+    <p class="ltrack util">Utility</p>
+    <h3><a href="${esc(docsUrl(p))}">${esc(p.name)}</a></h3>
+    <p class="lout">${esc(p.tagline)}</p>
+    ${metaLine(p)}
+    ${actions(p)}
+  </div>
+</article>`;
+}
+
+export function renderSections(pkgs) {
+  return SECTIONS.map((sec) => {
+    const items = pkgs.filter((p) => p.category === sec.id);
+    if (!items.length) return "";
+    const grid = items.some((p) => p.track === "flagship") ? "lgrid lgrid-h" : "lgrid";
+    return `<section id="${sec.id}">
+  <h2>${sec.title}</h2>
+  <div class="${grid}">
+${items.map((p) => card(p)).join("\n")}
+  </div>
+</section>`;
+  })
+    .filter(Boolean)
+    .join("\n");
+}
+
+function jsonLd(pkgs) {
+  const graph = pkgs
+    .filter((p) => p.track !== "archived")
+    .map((p) => ({
+      "@type": "SoftwareSourceCode",
+      name: p.name,
+      description: p.tagline,
+      programmingLanguage: "R",
+      runtimePlatform: "R",
+      codeRepository: githubUrl(p),
+      url: docsUrl(p),
+    }));
+  const doc = {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebSite", name: "pkgs.rsquaredacademy.com", url: "https://pkgs.rsquaredacademy.com/" },
+      ...graph,
+    ],
+  };
+  return `<script type="application/ld+json">\n${JSON.stringify(doc, null, 2)}\n</script>`;
+}
+
+const indent = (block, spaces) =>
+  block
+    .split("\n")
+    .map((line) => (line.trim() ? " ".repeat(spaces) + line : line))
+    .join("\n");
+
+export function render(pkgs) {
+  const template = readFileSync(path.join(root, "templates/index.html"), "utf8");
+  const init = readFileSync(path.join(root, "js/theme-init.js"), "utf8");
+  const html = template
+    .replace("{{THEME_INIT}}", `<script>${init}</script>`)
+    .replace("{{JSONLD}}", jsonLd(pkgs))
+    .replace("{{SECTIONS}}", indent(renderSections(pkgs), 12));
+  const leftover = html.match(/\{\{[A-Z_]+\}\}/g);
+  if (leftover) {
+    throw new Error(`template has unreplaced tokens: ${leftover.join(", ")}`);
+  }
+  return html;
 }
 
 function summary(pkgs) {
@@ -132,7 +308,12 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       for (const e of errors) console.error(`  - ${e}`);
       process.exit(1);
     }
+    const out = process.env.BUILD_OUT
+      ? path.resolve(root, process.env.BUILD_OUT)
+      : path.join(root, "index.html");
+    writeFileSync(out, render(pkgs));
     console.log(summary(pkgs));
+    console.log(`wrote ${path.relative(root, out)}`);
   } catch (e) {
     console.error(`error: ${e.message}`);
     process.exit(1);
