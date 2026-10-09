@@ -1,514 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="R Packages Website of Rsquared Academy">
-    <meta name="author" content="Rsquared Academy">
-    <link rel="canonical" href="https://pkgs.rsquaredacademy.com/" />
     <title>R Packages | Rsquared Academy</title>
-    <meta property="og:url" content="https://pkgs.rsquaredacademy.com/"/>
-    <meta property="og:title" content="R Packages | Rsquared Academy "/>
-    <meta property="og:site_name" content="pkgs.rsquaredacademy.com"/>
-    <meta property="og:description" content="Open source R packages developed by Rsquared Academy."/>
-    <meta property="og:image" content="https://pkgs.rsquaredacademy.com/images/hex_stickers.png"/>
-    <meta property="og:image:height" content="219"/>
-    <meta property="og:image:width" content="220"/>
-    <meta name="keywords" content="aravind hebbali, rsquared academy, rfm r package, rfm package, olsrr package, olsrr r package, descriptr r package, descriptr package, inferr package, inferr r package, blorr package, blorr r package, xplorerr, trainr, investorr, R, packages, library" />
-    <meta name="description" content="Open source R packages developed by Rsquared Academy." />
-    <meta name="twitter:title" content="R Packages | Rsquared Academy" />
-    <meta name="twitter:description" content="Open source R packages developed by Rsquared Academy." />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@rsquaredacademy" />
-    <meta name="twitter:image" content="https://pkgs.rsquaredacademy.com/images/hex_stickers.png" />
-    <meta name="twitter:image:width" content="300" />
-    <meta name="twitter:image:height" content="300" />
-    <meta name="twitter:creator" content="@rsquaredacademy" />
-    <meta name="twitter:domain" content="pkgs.rsquaredacademy.com" />
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/heroic-features.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <meta name="description" content="Reference documentation and vignettes for ten actively maintained R packages covering regression diagnostics, customer segmentation, descriptive statistics and inference.">
+    <meta name="author" content="Aravind Hebbali">
+    <link rel="canonical" href="https://pkgs.rsquaredacademy.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pkgs.rsquaredacademy.com/">
+    <meta property="og:title" content="R Packages | Rsquared Academy">
+    <meta property="og:description" content="Reference documentation and vignettes for ten actively maintained R packages covering regression diagnostics, customer segmentation, descriptive statistics and inference.">
+    <meta property="og:site_name" content="pkgs.rsquaredacademy.com">
+    <meta property="og:image" content="https://pkgs.rsquaredacademy.com/images/og_preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="R Packages | Rsquared Academy">
+    <meta name="twitter:description" content="Reference documentation and vignettes for ten actively maintained R packages covering regression diagnostics, customer segmentation, descriptive statistics and inference.">
+    <meta name="twitter:image" content="https://pkgs.rsquaredacademy.com/images/og_preview.png">
+    <meta name="twitter:site" content="@rsquaredacademy">
+    <meta name="twitter:creator" content="@rsquaredacademy">
+    <link rel="stylesheet" href="css/packages.css">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","light")}})();
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "pkgs.rsquaredacademy.com",
+      "url": "https://pkgs.rsquaredacademy.com/"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "olsrr",
+      "description": "Tools for building linear regression models.",
+      "programmingLanguage": "R",
+      "runtimePlatform": "R",
+      "codeRepository": "https://github.com/rsquaredacademy/olsrr",
+      "url": "https://olsrr.rsquaredacademy.com"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "blorr",
+      "description": "Tools for building binary logistic regression models.",
+      "programmingLanguage": "R",
+      "runtimePlatform": "R",
+      "codeRepository": "https://github.com/rsquaredacademy/blorr",
+      "url": "https://blorr.rsquaredacademy.com"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "xplorerr",
+      "description": "Tools for interactive data analysis.",
+      "programmingLanguage": "R",
+      "runtimePlatform": "R",
+      "codeRepository": "https://github.com/rsquaredacademy/xplorerr",
+      "url": "https://xplorerr.rsquaredacademy.com"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "descriptr",
+      "description": "Tools for generating descriptive and summary statistics.",
+      "programmingLanguage": "R",
+      "runtimePlatform": "R",
+      "codeRepository": "https://github.com/rsquaredacademy/descriptr",
+      "url": "https://descriptr.rsquaredacademy.com"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "inferr",
+      "description": "Tools for inferential statistics.",
+      "programmingLanguage": "R",
+      "runtimePlatform": "R",
+      "codeRepository": "https://github.com/rsquaredacademy/inferr",
+      "url": "https://inferr.rsquaredacademy.com"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "vistributions",
+      "description": "Tools for visualizing probability distributions.",
+      "programmingLanguage": "R",
+      "runtimePlatform": "R",
+      "codeRepository": "https://github.com/rsquaredacademy/vistributions",
+      "url": "https://vistributions.rsquaredacademy.com"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "rbin",
+      "description": "Tools for binning data.",
+      "programmingLanguage": "R",
+      "runtimePlatform": "R",
+      "codeRepository": "https://github.com/rsquaredacademy/rbin",
+      "url": "https://rbin.rsquaredacademy.com"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "rfm",
+      "description": "Tools for RFM analysis.",
+      "programmingLanguage": "R",
+      "runtimePlatform": "R",
+      "codeRepository": "https://github.com/rsquaredacademy/rfm",
+      "url": "https://rfm.rsquaredacademy.com"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "yahoofinancer",
+      "description": "Fetch stock and index data from Yahoo! Finance.",
+      "programmingLanguage": "R",
+      "runtimePlatform": "R",
+      "codeRepository": "https://github.com/rsquaredacademy/yahoofinancer",
+      "url": "https://yahoofinancer.rsquaredacademy.com"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "standby",
+      "description": "Save, load and manage R processes and sessions.",
+      "programmingLanguage": "R",
+      "runtimePlatform": "R",
+      "codeRepository": "https://github.com/rsquaredacademy/standby",
+      "url": "https://standby.rsquaredacademy.com"
+    }
+  ]
+}
+</script>
 </head>
-
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+    <header class="site-header">
+        <div class="container site-nav">
+            <a class="brand" href="https://www.rsquaredacademy.com">Rsquared Academy</a>
+            <ul class="nav-links">
+                <li><a href="/" aria-current="page">Home</a></li>
+                <li><a href="https://apps.rsquaredacademy.com/">Apps</a></li>
+                <li><a href="https://ebooks.rsquaredacademy.com/">Books</a></li>
+                <li><a href="https://www.rsquaredacademy.com/">Teaching</a></li>
+            </ul>
+            <div class="nav-right">
+                <a class="nav-icon" href="https://blog.rsquaredacademy.com/" aria-label="Blog">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a class="nav-icon" href="https://github.com/rsquaredacademy" aria-label="GitHub">
+                    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch colour theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
                 </button>
-                <a class="navbar-brand" href="#">Rsquared Academy</a>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="https://pkgs.rsquaredacademy.com/" target="_blank" rel="noopener">Home</a>
-                    </li>
-                    <li>
-                        <a href="https://rsquared-academy.thinkific.com/" target="_blank" rel="noopener">Courses</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Resources <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                          <li>
-                            <a href="https://blog.rsquaredacademy.com/" target="_blank" rel="noopener">Blog</a>
-                        </li>
-                        <li>
-                            <a href="https://ebooks.rsquaredacademy.com/" target="_blank" rel="noopener">e-books</a>
-                        </li>
-                        <li>
-                            <a href="https://apps.rsquaredacademy.com/" target="_blank" rel="noopener">Shiny Apps</a>
-                        </li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <!-- social media icons -->
-                <ul class="nav navbar-nav navbar-right social">
-                    <li><a href="https://github.com/rsquaredacademy" target="_blank" rel="noopener"><i class="fa fa-lg fa-github"></i></a></li>
-                    <li><a href="https://twitter.com/rsquaredacademy" target="_blank" rel="noopener"><i class="fa fa-lg fa-twitter"></i></a></li>
-                    <li><a href="https://www.youtube.com/user/rsquaredin/" target="_blank" rel="noopener"><i class="fa fa-lg fa-youtube"></i></a></li>
-                    <li><a href="https://in.linkedin.com/company/rsquared-academy" target="_blank" rel="noopener"><i class="fa fa-lg fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
-    </nav>
+    </header>
 
-    <!-- Page Content -->
-    <div class="container">
+    <main id="main">
+        <div class="container">
+            <section class="hero">
+                <h1>R Packages</h1>
+                <p class="lede">Reference documentation and vignettes for ten actively maintained R packages covering regression diagnostics, customer segmentation, descriptive statistics and inference.</p>
+                <p>Ten packages, all on CRAN, all documented, all actively maintained. Each was written while teaching at <a href="https://www.rsquaredacademy.com/">Rsquared Academy</a> and shared in the hope that others find them useful.</p>
+                <p>The goal is software which is user friendly, light weight, well tested and well documented. Major bugs get fixed quickly; feature requests are considered but not promised.</p>
+            </section>
 
-        <!-- Jumbotron Header -->
-      <!--  <header class="jumbotron hero-spacer"> -->
-        <div class = "row text-left"> 
+            <div class="listing">
+            <section id="regression">
+              <h2>Regression and modelling</h2>
+              <div class="lgrid lgrid-h">
+            <article class="lcard lcard-h" id="olsrr">
+              <div class="lside">
+                <img class="lcover lcover-hex" src="images/hex-olsrr.webp" alt="olsrr hex sticker" width="360" height="417" loading="lazy" decoding="async">
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=olsrr">CRAN</a><a class="lbtn" href="https://github.com/rsquaredacademy/olsrr">GitHub</a><a class="lbtn" href="https://olsrr.rsquaredacademy.com">Docs</a></div></div>
+              </div>
+              <div class="lbody">
+                <p class="ltrack">Flagship</p>
+                <h3><a href="https://olsrr.rsquaredacademy.com">olsrr</a></h3>
+                <p class="lout">Tools for building linear regression models.</p>
+    
+                <p class="lprereq">Diagnostics, variable selection and influence measures for a fitted <code>lm</code>.</p>
+                <details><summary>What's inside</summary><ul><li>Comprehensive Regression Output</li><li>Variable Selection Procedures</li><li>Heteroskedasticity Tests</li><li>Collinearity Diagnostics</li><li>Model Fit Assessment</li><li>Measures of Influence</li><li>Residual Diagnostics</li></ul></details>
+              </div>
+            </article>
+            <article class="lcard lcard-h" id="blorr">
+              <div class="lside">
+                <img class="lcover lcover-hex" src="images/hex-blorr.webp" alt="blorr hex sticker" width="360" height="417" loading="lazy" decoding="async">
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=blorr">CRAN</a><a class="lbtn" href="https://github.com/rsquaredacademy/blorr">GitHub</a><a class="lbtn" href="https://blorr.rsquaredacademy.com">Docs</a></div></div>
+              </div>
+              <div class="lbody">
+                <p class="ltrack">Flagship</p>
+                <h3><a href="https://blorr.rsquaredacademy.com">blorr</a></h3>
+                <p class="lout">Tools for building binary logistic regression models.</p>
+    
+                <p class="lprereq">Model fit, validation and collinearity for a fitted <code>glm</code> with a binary outcome.</p>
+                <details><summary>What's inside</summary><ul><li>Bivariate Analysis</li><li>Model Fit Statistics</li><li>Model Validation</li><li>Variable Selection</li><li>Residual Diagnostics</li><li>Collinearity Diagnostics</li><li>Visualization</li></ul></details>
+              </div>
+            </article>
+            <article class="lcard lcard-h" id="xplorerr">
+              <div class="lside">
+                <img class="lcover lcover-hex" src="images/hex-xplorerr.webp" alt="xplorerr hex sticker" width="360" height="417" loading="lazy" decoding="async">
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=xplorerr">CRAN</a><a class="lbtn" href="https://github.com/rsquaredacademy/xplorerr">GitHub</a><a class="lbtn" href="https://xplorerr.rsquaredacademy.com">Docs</a></div></div>
+              </div>
+              <div class="lbody">
+                <p class="ltrack">Flagship</p>
+                <h3><a href="https://xplorerr.rsquaredacademy.com">xplorerr</a></h3>
+                <p class="lout">Tools for interactive data analysis.</p>
+    
+                <p class="lprereq">Descriptive, inferential and visual analysis behind a Shiny interface. See https://apps.rsquaredacademy.com/.</p>
+                <details><summary>What's inside</summary><ul><li>Descriptive Statistics</li><li>Inferential Statistics</li><li>Visualize Probability Distributions</li><li>Data Visualization</li><li>RFM Analysis</li><li>Linear Regression</li><li>Logistic Regression</li></ul></details>
+              </div>
+            </article>
+              </div>
+            </section>
+            <section id="statistics">
+              <h2>Descriptive and inferential statistics</h2>
+              <div class="lgrid lgrid-h">
+            <article class="lcard lcard-h" id="descriptr">
+              <div class="lside">
+                <img class="lcover lcover-hex" src="images/hex-descriptr.webp" alt="descriptr hex sticker" width="360" height="417" loading="lazy" decoding="async">
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=descriptr">CRAN</a><a class="lbtn" href="https://github.com/rsquaredacademy/descriptr">GitHub</a><a class="lbtn" href="https://descriptr.rsquaredacademy.com">Docs</a></div></div>
+              </div>
+              <div class="lbody">
+                <p class="ltrack">Flagship</p>
+                <h3><a href="https://descriptr.rsquaredacademy.com">descriptr</a></h3>
+                <p class="lout">Tools for generating descriptive and summary statistics.</p>
+    
+                <p class="lprereq">The fastest way to screen a data frame before you model it.</p>
+                <details><summary>What's inside</summary><ul><li>Data Screening</li><li>Summary Statistics</li><li>Frequency Tables</li><li>Cross Tables</li><li>Data Visualization</li></ul></details>
+              </div>
+            </article>
+            <article class="lcard lcard-h" id="inferr">
+              <div class="lside">
+                <img class="lcover lcover-hex" src="images/hex-inferr.webp" alt="inferr hex sticker" width="360" height="417" loading="lazy" decoding="async">
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=inferr">CRAN</a><a class="lbtn" href="https://github.com/rsquaredacademy/inferr">GitHub</a><a class="lbtn" href="https://inferr.rsquaredacademy.com">Docs</a></div></div>
+              </div>
+              <div class="lbody">
+                <p class="ltrack">Flagship</p>
+                <h3><a href="https://inferr.rsquaredacademy.com">inferr</a></h3>
+                <p class="lout">Tools for inferential statistics.</p>
+    
+                <p class="lprereq">Hypothesis tests with plain R syntax — no formulas to memorise.</p>
+                <details><summary>What's inside</summary><ul><li>Binomial Test</li><li>Test of Proportion</li><li>t Test</li><li>Chi Square Test</li><li>Levene’s Test</li><li>Test of Variance</li><li>McNemar Test</li><li>Cochran Q Test</li><li>Runs Test</li></ul></details>
+              </div>
+            </article>
+            <article class="lcard lcard-h" id="vistributions">
+              <div class="lside">
+                <img class="lcover lcover-hex" src="images/hex-vistributions.webp" alt="vistributions hex sticker" width="360" height="417" loading="lazy" decoding="async">
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=vistributions">CRAN</a><a class="lbtn" href="https://github.com/rsquaredacademy/vistributions">GitHub</a><a class="lbtn" href="https://vistributions.rsquaredacademy.com">Docs</a></div></div>
+              </div>
+              <div class="lbody">
+                <p class="ltrack">Flagship</p>
+                <h3><a href="https://vistributions.rsquaredacademy.com">vistributions</a></h3>
+                <p class="lout">Tools for visualizing probability distributions.</p>
+    
+                <p class="lprereq">Plot the binomial, chi square, normal, F and t distributions. See https://apps.rsquaredacademy.com/.</p>
+                <details><summary>What's inside</summary><ul><li>Binomial Distribution</li><li>Chi Square Distribution</li><li>Normal Distribution</li><li>f Distribution</li><li>t Distribution</li><li>Includes Shiny App</li></ul></details>
+              </div>
+            </article>
+              </div>
+            </section>
+            <section id="wrangling">
+              <h2>Data wrangling and segmentation</h2>
+              <div class="lgrid lgrid-h">
+            <article class="lcard lcard-h" id="rbin">
+              <div class="lside">
+                <img class="lcover lcover-hex" src="images/hex-rbin.webp" alt="rbin hex sticker" width="360" height="417" loading="lazy" decoding="async">
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=rbin">CRAN</a><a class="lbtn" href="https://github.com/rsquaredacademy/rbin">GitHub</a><a class="lbtn" href="https://rbin.rsquaredacademy.com">Docs</a></div></div>
+              </div>
+              <div class="lbody">
+                <p class="ltrack">Flagship</p>
+                <h3><a href="https://rbin.rsquaredacademy.com">rbin</a></h3>
+                <p class="lout">Tools for binning data.</p>
+    
+                <p class="lprereq">Turn continuous variables into factors, and generate dummy variables from them.</p>
+                <details><summary>What's inside</summary><ul><li>Manual Binning</li><li>Quantile Binning</li><li>Winsorized Binning</li><li>Equal Length Binning</li><li>Equal Width Binning</li><li>Factor Binning</li><li>Generate Dummy Variables</li><li>Includes RStudio Addins</li></ul></details>
+              </div>
+            </article>
+            <article class="lcard lcard-h" id="rfm">
+              <div class="lside">
+                <img class="lcover lcover-hex" src="images/hex-rfm.webp" alt="rfm hex sticker" width="360" height="417" loading="lazy" decoding="async">
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=rfm">CRAN</a><a class="lbtn" href="https://github.com/rsquaredacademy/rfm">GitHub</a><a class="lbtn" href="https://rfm.rsquaredacademy.com">Docs</a></div></div>
+              </div>
+              <div class="lbody">
+                <p class="ltrack">Flagship</p>
+                <h3><a href="https://rfm.rsquaredacademy.com">rfm</a></h3>
+                <p class="lout">Tools for RFM analysis.</p>
+                <p class="lmeta"><span class="lpill">Maintenance mode</span> bug fixes only</p>
+                <p class="lprereq">Score and segment customers from transaction-level data. See https://apps.rsquaredacademy.com/.</p>
+                <details><summary>What's inside</summary><ul><li>Generate RFM Scores</li><li>Handles Transaction / Customer Level Data</li><li>Visualization Tools</li><li>Segment Customers</li><li>Includes Shiny App</li></ul></details>
+              </div>
+            </article>
+              </div>
+            </section>
+            <section id="utilities">
+              <h2>Utilities</h2>
+              <div class="lgrid">
+            <article class="lcard" id="yahoofinancer">
+              <div class="lbody">
+                <p class="ltrack util">Utility</p>
+                <h3><a href="https://yahoofinancer.rsquaredacademy.com">yahoofinancer</a></h3>
+                <p class="lout">Fetch stock and index data from Yahoo! Finance.</p>
+    
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=yahoofinancer">CRAN</a><a class="lbtn" href="https://github.com/rsquaredacademy/yahoofinancer">GitHub</a><a class="lbtn" href="https://yahoofinancer.rsquaredacademy.com">Docs</a></div></div>
+              </div>
+            </article>
+            <article class="lcard" id="standby">
+              <div class="lbody">
+                <p class="ltrack util">Utility</p>
+                <h3><a href="https://standby.rsquaredacademy.com">standby</a></h3>
+                <p class="lout">Save, load and manage R processes and sessions.</p>
+    
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=standby">CRAN</a><a class="lbtn" href="https://github.com/rsquaredacademy/standby">GitHub</a><a class="lbtn" href="https://standby.rsquaredacademy.com">Docs</a></div></div>
+              </div>
+            </article>
+              </div>
+            </section>
+            <section id="archived">
+              <h2>Archived</h2>
+              <div class="lgrid">
+            <article class="lcard" id="nse2r">
+              <div class="lbody">
+                <p class="ltrack arch">Archived</p>
+                <h3><a href="https://github.com/rsquaredacademy/nse2r">nse2r</a></h3>
+                <p class="lout">Fetched data from the National Stock Exchange of India.</p>
+                <p class="lmeta"><span class="lpill arch">Archived 2023-08-07</span> v0.1.6, under revival</p>
+                <p class="lprereq">No longer installable from CRAN. Source and issue tracker are on GitHub.</p>
+                <div class="lactions"><div class="lactions-row"><a class="lbtn" href="https://cran.r-project.org/package=nse2r">CRAN (archived)</a><a class="lbtn primary" href="https://github.com/rsquaredacademy/nse2r">GitHub</a></div></div>
+              </div>
+            </article>
+              </div>
+            </section>
+            </div>
+        </div>
+    </main>
 
-          <div class="col-md-6 col-sm-9">
-            <br>
-            <br>
-            <p class = 'text-justify'><a href="https://www.rsquaredacademy.com" target="_blank" rel="noopener">
-            Rsquared Academy</a> uses R packages for teaching business analytics/ data science courses. In the process, we created a few packages and would like to share them with the community in the hope that others will find it useful in teaching and learning data science with R.
-            </p>
-            <p>Our goal is to design and develop R packages which are:</p>
-            <ul>
-            	<li>User friendly</li>
-				<li>Light weight</li>
-				<li>Well tested</li>
-				<li>Well documented</li>
+    <footer class="site-footer">
+        <div class="container">
+            <p>Designed, developed and maintained by Aravind Hebbali · Bengaluru, India</p>
+            <ul class="social">
+                <li>
+                    <a href="mailto:hebbali.aravind@gmail.com">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+                        <span>Email</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/aravindhebbali">
+                        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/aravind-hebbali-b6553831/">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9z"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://blog.rsquaredacademy.com/">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.rsquaredacademy.com/">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Rsquared Academy</span>
+                    </a>
+                </li>
             </ul>
-			<p>Our developers are proactive and respond to your concerns in a timely manner. We may not be able to fix bugs or add new features outright but try to do so to the best of our ability. We are quick to fix any major bugs or issues that may affect our users. 
-			</p>
-          </div>
-
-          <div class="col-md-6 col-sm-3">
-            <div class="text-center">
-            <br>
-            <br>
-            <br>
-              <p>
-                <img src="images/hex_stickers.png" width="400px" alt="">
-              </p>
-            </div>
-          </div>
         </div>
-        <!--- </header> -->
+    </footer>
 
-        <hr>
-
-        <div class = "row text-left"> 
-
-          <div class="col-md-3 col-sm-3"></div>	
-          <div class="col-md-3 col-sm-3">
-            <br>
-            <div class="text-center">
-            	<br>
-              <p>
-                <img src="images/hex_trial.png" height="250px"  alt="">
-              </p>
-            </div>
-          </div>
-
-          <!-- <div class="col-md-3 col-sm-9">
-          </div>  -->
-          <div class="col-md-6 col-sm-6">
-            <br>
-            <br>
-            <a href="https://olsrr.rsquaredacademy.com" target="_blank" rel="noopener"><h3>olsrr</h3></a>
-            <p class="text-justify">Tools for building linear regression models</p>
-            <ul>
-            	<li>Comprehensive Regression Output</li>
-				<li>Variable Selection Procedures</li>
-				<li>Heteroskedasticity Tests</li>
-				<li>Collinearity Diagnostics</li>
-				<li>Model Fit Assessment</li>
-				<li>Measures of Influence</li>
-				<li>Residual Diagnostics</li>
-            </ul>
-            <p>
-              <a href="https://cran.r-project.org/package=olsrr" target="_blank" rel="noopener">CRAN</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/rsquaredacademy/olsrr" target="_blank" rel="noopener">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://olsrr.rsquaredacademy.com" target="_blank" rel="noopener">Docs</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class = "row text-left"> 
-          <div class="col-md-3 col-sm-3"></div>	
-          <div class="col-md-3 col-sm-3">
-            <br>
-            <br>
-            <div class="text-center">
-              <p>
-                <img src="images/hex_rfm.png" height="250px" alt="">
-              </p>
-            </div>
-          </div>
-
-          <!-- <div class="col-md-3 col-sm-9">
-          </div>  -->
-
-          <div class="col-md-6 col-sm-6">
-            <br>
-            <br>
-            <a href="https://rfm.rsquaredacademy.com/" target="_blank" rel="noopener"><h3>rfm</h3></a>
-            <p class="text-justify">Tools for RFM analysis</p>
-            <ul>
-            	<li>Generate RFM Scores</li>
-				<li>Handles Transaction/Customer Level Data</li>
-				<li>Visualization Tools</li>
-				<li>Segment Customers</li>
-				<li>Includes Shiny App</li>
-            </ul>
-              <p>
-              <a href="https://cran.r-project.org/package=rfm" target="_blank" rel="noopener">CRAN</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/rsquaredacademy/rfm" target="_blank" rel="noopener">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://rfm.rsquaredacademy.com" target="_blank" rel="noopener">Docs</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class = "row text-left"> 
-          <div class="col-md-3 col-sm-3"></div>
-          <div class="col-md-3 col-sm-3">
-            <br>
-            <br>
-            <div class="text-center">
-              <p>
-                <img src="images/hex_xplorerr.png" height="250px" alt="">
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-sm-6">
-            <br>
-            <br>
-            <a href="https://xplorerr.rsquaredacademy.com" target="_blank" rel="noopener"><h3>xplorerr</h3></a>
-            <p class="text-justify">Tools for interactive data analysis</p>
-            <ul>
-            	<li>Descriptive Statistics</li>
-				<li>Inferential Statistics</li>
-				<li>Visualize Probability Distributions</li>
-				<li>Data Visualization</li>
-				<li>RFM Analysis</li>
-				<li>Linear Regression</li>
-				<li>Logistic Regression</li>
-            </ul>
-            <p>
-              <a href="https://cran.r-project.org/package=xplorerr" target="_blank" rel="noopener">CRAN</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/rsquaredacademy/xplorerr" target="_blank" rel="noopener">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://xplorerr.rsquaredacademy.com" target="_blank" rel="noopener">Docs</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class = "row text-left"> 
-          <div class="col-md-3 col-sm-3"></div>	
-          <div class="col-md-3 col-sm-3">
-            <br>
-            <br>
-            <div class="text-center">
-              <p>
-                <img src="images/hex_descriptr.png" height="250px" alt="">
-              </p>
-            </div>  
-          </div>
-
-          <!-- <div class="col-md-3 col-sm-9">
-          </div>  -->
-
-          <div class="col-md-6 col-sm-6">
-            <br>
-            <br>
-            <a href="https://descriptr.rsquaredacademy.com" target="_blank" rel="noopener"><h3>descriptr</h3></a>
-            <p class="text-justify">Tools for generating descriptive/summary statistics</p>
-            <ul>
-            	<li>Data Screening</li>
-            	<li>Summary Statistics</li>
-            	<li>Frequency Tables</li>
-            	<li>Cross Tables</li>
-            	<li>Data Visualization</li>
-            </ul>
-            <p>
-              <a href="https://cran.r-project.org/package=descriptr" target="_blank" rel="noopener">CRAN</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/rsquaredacademy/descriptr" target="_blank" rel="noopener">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://descriptr.rsquaredacademy.com" target="_blank" rel="noopener">Docs</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class = "row text-left"> 
-          <div class="col-md-3 col-sm-3"></div>
-          <div class="col-md-3 col-sm-3">
-            <br>
-            <br>
-            <br>
-            <div class="text-center">
-              <p>
-                <img src="images/hex_inferr.png" height="250px" alt="">
-              </p>
-            </div>
-          </div>
-
-          <!-- <div class="col-md-3 col-sm-9">
-          </div>  -->
-
-          <div class="col-md-6 col-sm-6">
-            <br>
-            <br>
-            <a href="https://inferr.rsquaredacademy.com" target="_blank" rel="noopener"><h3>inferr</h3></a>
-            <p class="text-justify">Tools for inferential statistics</p>
-            <ul>
-            	<li>Binomial Test</li>
-            	<li>Levene's Test</li>
-            	<li>Test of Proportion</li>
-            	<li>Test of Variance</li>
-            	<li>t Test</li>
-            	<li>Chi Square Test</li>
-            	<li>McNemar Test</li>
-            	<li>Cochran Q Test</li>
-            	<li>Runs Test</li>
-            </ul>
-            <p>
-              <a href="https://cran.r-project.org/package=inferr" target="_blank" rel="noopener">CRAN</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/rsquaredacademy/inferr" target="_blank" rel="noopener">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://inferr.rsquaredacademy.com" target="_blank" rel="noopener">Docs</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class = "row text-left"> 
-
-          <div class="col-md-3 col-sm-3"></div>	
-          <div class="col-md-3 col-sm-3">
-            <br>
-            <br>
-            <br>
-            <div class="text-center">
-              <p>
-                <img src="images/hex_blorr.png" height="250px" alt="">
-              </p>
-            </div>
-          </div>
-
-          <!-- <div class="col-md-3 col-sm-9">
-          </div>  -->
-
-          <div class="col-md-6 col-sm-6">
-            <br>
-            <br>
-            <a href="https://blorr.rsquaredacademy.com" target="_blank" rel="noopener"><h3>blorr</h3></a>
-            <p class="text-justify">Tools for building binary logistic regression models</p>
-            <ul>
-            	<li>Bivariate Analysis</li>
-            	<li>Model Fit Statistics</li>
-            	<li>Model Validation</li>
-            	<li>Variable Selection</li>
-            	<li>Residual Diagnostics</li>
-            	<li>Collinearity Diagnostics</li>
-            	<li>Visualization</li>
-            </ul>
-            <p>
-              <a href="https://cran.r-project.org/package=blorr" target="_blank" rel="noopener">CRAN</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/rsquaredacademy/blorr" target="_blank" rel="noopener">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://blorr.rsquaredacademy.com" target="_blank" rel="noopener">Docs</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-          </div>
-        </div>
-
-        <hr>
-
-        
-
-        <div class = "row text-left"> 
-          <div class="col-md-3 col-sm-3"></div>	  
-          <div class="col-md-3 col-sm-3">
-            <br>
-            <br>
-            <div class="text-center">
-              <p>
-                <img src="images/hex_vistributions.png" height="250px" alt="">
-              </p>
-            </div>
-          </div>
-
-
-          <div class="col-md-6 col-sm-6">
-            <br>
-            <br>
-            <a href="https://vistributions.rsquaredacademy.com/" target="_blank" rel="noopener"><h3>vistributions</h3></a>
-            <p class="text-justify">Tools for visualizing probability distributions</p>
-            <ul>
-            	<li>Binomial Distribution</li>
-            	<li>Chi Square Distribution</li>
-            	<li>Normal Distribution</li>
-            	<li>f Distribution</li>
-            	<li>t Distribution</li>
-            	<li>Includes Shiny App</li>
-            </ul>
-              <p>
-              <a href="https://cran.r-project.org/package=vistributions" target="_blank" rel="noopener">CRAN</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://github.com/rsquaredacademy/vistributions" target="_blank" rel="noopener">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://vistributions.rsquaredacademy.com" target="_blank" rel="noopener">Docs</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class = "row text-left"> 
-          <div class="col-md-3 col-sm-3"></div>
-          <div class="col-md-3 col-sm-3">
-            <br>
-            <br>
-            <br>
-            <div class="text-center">
-              <p>
-                <img src="images/hex_rbin.png" height="250px" alt="">
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-sm-6">
-            <br>
-            <br>
-            <a href="https://rbin.rsquaredacademy.com/" target="_blank" rel="noopener"><h3>rbin</h3></a>
-            <p class="text-justify">Tools for binning data</p>
-            <ul>
-            	<li>Manual Binning</li>
-            	<li>Quantile Binning</li>
-            	<li>Winsorized Binning</li>
-            	<li>Equal Length Binning</li>
-            	<li>Equal Width Binning</li>
-            	<li>Factor Binning</li>
-            	<li>Generate Dummy Variables</li>
-            	<li>Includes RStudio Addins</li>
-            </ul>
-              <p>
-              <a href="https://cran.r-project.org/package=rbin" target="_blank" rel="noopener">CRAN</a>&nbsp;&nbsp;&nbsp;&nbsp;  
-              <a href="https://github.com/rsquaredacademy/rbin" target="_blank" rel="noopener">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://rbin.rsquaredacademy.com" target="_blank" rel="noopener">Docs</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-          </div>
-        </div>
-
-        <hr>
-
-        
-
-        <div class = "row text-left"> 
- 		  <div class="col-md-3 col-sm-3"></div>
-          <div class="col-md-3 col-sm-3">
-            <br>
-            <br>
-            <br>
-            <div class="text-center">
-              <p>
-                <img src="images/hex_nse2r.png" height="250px" alt="">
-              </p>
-            </div>
-          </div>
-
-  
-          <div class="col-md-6 col-sm-6">
-            <br>
-            <br>
-            <a href="https://nse2r.rsquaredacademy.com" target="_blank" rel="noopener"><h3>nse2r</h3></a>
-            <p class="text-justify">Fetch data from the National Stock Exchange, India</p>
-            <p class="text-justify"><strong>Note:</strong> Archived on CRAN; rework in progress. For the latest GitHub release use <code>pak::pak("rsquaredacademy/nse2r")</code>.</p>
-            <ul>
-            	<li>Most Actively Traded Stocks</li>
-            	<li>NSE Top Gainers & Losers</li>
-            	<li>52 Week High & Low</li>
-            	<li>Index Quote</li>
-            	<li>Top F&O Gainers & Losers</li>
-            	<li>Pre Open Market Data</li>
-            	<li>Advances & Declines</li>
-            	<li>Includes Shiny App</li>
-            </ul>
-            <p>
-              <a href="https://cran.r-project.org/package=nse2r" target="_blank" rel="noopener">CRAN</a>&nbsp;&nbsp;&nbsp;&nbsp;  
-              <a href="https://github.com/rsquaredacademy/nse2r" target="_blank" rel="noopener">GitHub</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="https://nse2r.rsquaredacademy.com" target="_blank" rel="noopener">Docs</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-          </div>
-        </div>
-
-
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; <a href="https://www.rsquaredacademy.com" target="_blank" rel="noopener">Rsquared Academy</a> 2014-2026</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
+    <script src="js/theme.js" defer></script>
+    <script src="js/consent.js" defer></script>
 </body>
-
 </html>
