@@ -3,3 +3,24 @@
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  # Strict CSP: no unsafe-inline/unsafe-eval. The single inline script (theme
+  # no-flash detector in <head>) is allowed by hash - regenerate with `npm run hash`
+  # whenever js/theme-init.js changes. GA hosts are listed but consent.js only loads
+  # them after the visitor accepts (consent gate enforces the policy, CSP just permits).
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-1F9N9BrrKBVMMcPvcgckSbkfN2UUKzJnS4P4m+CZmLo=' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self'; img-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com; frame-ancestors 'none'; base-uri 'none'; form-action 'none'
+
+/images/*
+  Cache-Control: public, max-age=604800
+
+/css/*
+  Cache-Control: public, max-age=604800
+
+/js/*
+  Cache-Control: public, max-age=604800
+
+/favicon.ico
+  Cache-Control: public, max-age=604800
+
+/favicon.svg
+  Cache-Control: public, max-age=604800
