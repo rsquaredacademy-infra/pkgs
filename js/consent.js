@@ -2,7 +2,7 @@
 // "Essential only" stores a denial and loads no analytics at all.
 // Set GA_ID to the portal's GA4 measurement id before launch; a placeholder disables GA.
 (function () {
-  var GA_ID = "G-XXXXXXXXXX"; // TODO: replace with the pkgs.rsquaredacademy.com measurement id
+  var GA_ID = "G-XZCBS09LJ3"; // GA4 measurement id for pkgs.rsquaredacademy.com
   var KEY = "consent";
   var PLACEHOLDER = /^G-X+$/i;
 
