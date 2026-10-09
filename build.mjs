@@ -1,6 +1,7 @@
 import { readFileSync, existsSync, writeFileSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import yaml from "js-yaml";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
@@ -56,6 +57,28 @@ export function cranUrl(p) {
 
 export function hexPath(p) {
   return p.hex ?? `images/hex-${p.name}.webp`;
+}
+
+/* ---------- asset cache-busting ---------- */
+
+// /images, /css and /js are served with long-lived cache headers, so any
+// change to a file needs a new URL. Each local asset gets a short content
+// hash as a query parameter: edits invalidate immediately, no manual bumps.
+const assetHashes = new Map();
+
+export function versionedUrl(relPath) {
+  if (!assetHashes.has(relPath)) {
+    let hash = "";
+    try {
+      const buf = readFileSync(path.join(root, relPath));
+      hash = createHash("sha256").update(buf).digest("hex").slice(0, 10);
+    } catch {
+      hash = ""; // missing asset: leave the path alone so the 404 is visible
+    }
+    assetHashes.set(relPath, hash);
+  }
+  const hash = assetHashes.get(relPath);
+  return hash ? `${relPath}?v=${hash}` : relPath;
 }
 
 export function validate(pkgs) {
@@ -192,7 +215,7 @@ function card(p) {
     const size = dims ? ` width="${dims.width}" height="${dims.height}"` : "";
     return `<article class="lcard lcard-h" id="${p.name}">
   <div class="lside">
-    <img class="lcover lcover-hex" src="${esc(hexPath(p))}" alt="${esc(p.name)} hex sticker"${size} loading="lazy" decoding="async">
+    <img class="lcover lcover-hex" src="${esc(versionedUrl(hexPath(p)))}" alt="${esc(p.name)} hex sticker"${size} loading="lazy" decoding="async">
     ${actions(p)}
   </div>
   <div class="lbody">
@@ -282,6 +305,9 @@ export function render(pkgs) {
   const html = template
     .replace("{{THEME_INIT}}", `<script>${init}</script>`)
     .replace("{{JSONLD}}", jsonLd(pkgs))
+    .replace("{{CSS}}", esc(versionedUrl("css/packages.css")))
+    .replace("{{JS_THEME}}", esc(versionedUrl("js/theme.js")))
+    .replace("{{JS_CONSENT}}", esc(versionedUrl("js/consent.js")))
     .replace("{{SECTIONS}}", indent(renderSections(pkgs), 12));
   const leftover = html.match(/\{\{[A-Z_]+\}\}/g);
   if (leftover) {
