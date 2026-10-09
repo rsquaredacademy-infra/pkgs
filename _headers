@@ -4,6 +4,9 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=()
+  # HSTS is managed in the Netlify dashboard (Domain management > HTTPS), not here:
+  # Netlify already sends Strict-Transport-Security: max-age=31536000, and a
+  # duplicate header from _headers would make browsers drop it entirely (RFC 6797).
   # Strict CSP: no unsafe-inline/unsafe-eval. The single inline script (theme
   # no-flash detector in <head>) is allowed by hash - regenerate with `npm run hash`
   # whenever js/theme-init.js changes. GA hosts are listed but consent.js only loads
