@@ -9,9 +9,10 @@
   # duplicate header from _headers would make browsers drop it entirely (RFC 6797).
   # Strict CSP: no unsafe-inline/unsafe-eval. The single inline script (theme
   # no-flash detector in <head>) is allowed by hash - regenerate with `npm run hash`
-  # whenever js/theme-init.js changes. GA hosts are listed but consent.js only loads
-  # them after the visitor accepts (consent gate enforces the policy, CSP just permits).
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-1F9N9BrrKBVMMcPvcgckSbkfN2UUKzJnS4P4m+CZmLo=' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self'; img-src 'self'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com; frame-ancestors 'none'; base-uri 'none'; form-action 'none'
+  # whenever js/theme-init.js changes. The site-kit analytics/consent files load
+  # from 'self'; the GA/GTM origins below are required by site-kit/rsa-analytics.js
+  # (Phase A: GA4 + Consent Mode v2).
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-1F9N9BrrKBVMMcPvcgckSbkfN2UUKzJnS4P4m+CZmLo=' https://www.googletagmanager.com; style-src 'self'; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; frame-ancestors 'none'; base-uri 'none'; form-action 'none'
 
 /images/*
   Cache-Control: public, max-age=604800
