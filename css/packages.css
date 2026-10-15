@@ -587,61 +587,6 @@ img {
   height: 1.05rem;
 }
 
-/* ---------- consent banner ---------- */
-
-.consent {
-  position: fixed;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 200;
-  max-width: 42rem;
-  margin: 0 auto;
-  background: var(--surface);
-  border: 1px solid var(--line-strong);
-  border-radius: 12px;
-  box-shadow: 0 14px 34px var(--shadow-md);
-  padding: 1rem 1.1rem;
-  font-size: 0.875rem;
-  color: var(--body);
-}
-
-.consent p {
-  margin: 0 0 0.75rem;
-}
-
-.consent-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.consent-actions button {
-  font: inherit;
-  font-weight: 700;
-  font-size: 0.8125rem;
-  padding: 0.4rem 0.9rem;
-  border-radius: 9px;
-  cursor: pointer;
-  border: 1px solid var(--line-strong);
-  background: var(--surface);
-  color: var(--ink);
-}
-
-.consent-actions button:hover {
-  background: var(--line-soft);
-}
-
-.consent-actions button.primary {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--on-ink);
-}
-
-.consent-actions button.primary:hover {
-  background: var(--ink-hover);
-}
-
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {

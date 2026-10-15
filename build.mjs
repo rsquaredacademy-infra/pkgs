@@ -307,7 +307,6 @@ export function render(pkgs) {
     .replace("{{JSONLD}}", jsonLd(pkgs))
     .replace("{{CSS}}", esc(versionedUrl("css/packages.css")))
     .replace("{{JS_THEME}}", esc(versionedUrl("js/theme.js")))
-    .replace("{{JS_CONSENT}}", esc(versionedUrl("js/consent.js")))
     .replace("{{SECTIONS}}", indent(renderSections(pkgs), 12));
   const leftover = html.match(/\{\{[A-Z_]+\}\}/g);
   if (leftover) {
