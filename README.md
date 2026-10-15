@@ -42,7 +42,8 @@ then rebuild. CI fails if the committed `index.html` drifts from the build outpu
 | `check.mjs` | Link validation over the generated page |
 | `hash.mjs` | Prints the CSP hash for the inlined theme script |
 | `css/packages.css` | Hand-written stylesheet — design tokens, listing cards, dark mode |
-| `js/` | Vanilla JS only: theme toggle, analytics consent gate |
+| `js/` | Vanilla JS only: theme toggle |
+| `site-kit/` | Vendored [Rsquared site-kit](https://github.com/rsquaredacademy-infra/site-kit) (GA4 + region-based consent); see `site-kit/VERSION` |
 | `.github/workflows/ci.yml` | Build, drift check, link check on every push and PR |
 
 ## Adding a package
@@ -54,8 +55,8 @@ the full schema, conventions and the release-day rules.
 ## Notes
 
 - The listing mirrors the design of [aravindhebbali.com/packages](https://www.aravindhebbali.com/packages/).
-- Analytics run through GA4 behind a consent gate — nothing is sent to Google until a
-  visitor chooses "Accept"; "Essential only" loads no analytics at all.
+- Analytics: GA4 via the vendored site-kit. Visitors in the EEA, UK and Switzerland see a
+  consent banner; everyone else is measured by default and can opt out from the footer.
 - HSTS is served by Netlify from its dashboard setting, deliberately not duplicated in
   `_headers` (a duplicate header would make browsers ignore it — see the comment there).
 - The repository is public: unreleased package names are never committed. `build.mjs`

@@ -23,6 +23,9 @@
 /js/*
   Cache-Control: public, max-age=604800
 
+/site-kit/*
+  Cache-Control: public, max-age=86400
+
 /favicon.ico
   Cache-Control: public, max-age=604800
 

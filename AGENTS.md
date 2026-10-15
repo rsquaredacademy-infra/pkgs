@@ -24,6 +24,7 @@
 - `data/packages.yaml` — single source of truth for the package catalog
 - `templates/index.html` — page shell (edit this, not `index.html`)
 - `build.mjs` — Node build: validates YAML, renders `index.html`
-- `js/` — Vanilla JS only (theme toggle, consent gate); no frameworks
+- `js/` — Vanilla JS only (theme toggle); no frameworks
+- `site-kit/` — vendored Rsquared site-kit (analytics + consent); update by copying a new release, never edit in place
 - `css/packages.css` — hand-written stylesheet (design tokens, listing cards)
 - `npm run build` / `npm run check` / `npm run hash` — build / link check / CSP inline-script hash
