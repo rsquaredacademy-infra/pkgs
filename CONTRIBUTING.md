@@ -27,7 +27,7 @@ npm run hash      # prints the CSP hash for the inlined theme script
   tagline: "Tools for building linear regression models."   # required, one line
   blurb: "Diagnostics ... a fitted `lm`."                    # optional; backticks become <code>
   features: [Comprehensive Regression Output, ...]           # required for flagship track
-  track: flagship            # flagship (hex card) | utility (text card) | archived
+  track: flagship            # flagship (hex card) | utility (text card, or a hex card when the package has a hex in data/hex.json) | archived
   category: regression       # regression | statistics | wrangling | utilities | archived
   cran: true                 # false hides the CRAN button (GitHub-only packages)
   status: active             # active | maintenance | pending-cran | deprecated | archived
