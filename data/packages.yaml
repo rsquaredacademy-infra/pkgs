@@ -131,14 +131,33 @@
   status: maintenance
 
 - name: yahoofinancer
-  tagline: "Fetch stock and index data from Yahoo! Finance."
+  tagline: "Fetch data from the Yahoo Finance API."
+  blurb: "Historical and near real-time data on stocks, indices and currencies."
+  features:
+    - Historical Prices
+    - Real-time Quotes
+    - Financial Statements
+    - Valuation Metrics
+    - Currency Conversion
+    - Market Indices
+    - Market Summary
+    - Trending Tickers
+    - Multi-ticker Queries
   track: utility
   category: utilities
   cran: true
   status: active
 
 - name: standby
-  tagline: "Save, load and manage R processes and sessions."
+  tagline: "Alerts, notifications and loading screens in Shiny."
+  blurb: "Add alerts, notifications, modals, info tips and loading screens to Shiny apps."
+  features:
+    - Loading Screens for Shiny Outputs
+    - Spinners and Loaders
+    - Alerts and Modals
+    - Notifications and Toasts
+    - Tooltips
+    - Preview Alerts and Spinners
   track: utility
   category: utilities
   cran: true
