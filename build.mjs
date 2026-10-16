@@ -209,17 +209,23 @@ function detailsBox(p) {
   return `<details><summary>What's inside</summary><ul>${items}</ul></details>`;
 }
 
-function card(p) {
-  if (p.track === "flagship") {
-    const dims = hexDims(p.name);
-    const size = dims ? ` width="${dims.width}" height="${dims.height}"` : "";
-    return `<article class="lcard lcard-h" id="${p.name}">
+// A Flagship package is always a full horizontal hex card. A Utility package is
+// one only when data/hex.json has an entry for it; otherwise it stays a text card.
+const hasHexEntry = (p) => hexDims(p.name) !== null;
+const isHexCard = (p) =>
+  p.track === "flagship" || (p.track === "utility" && hasHexEntry(p));
+
+function hexCard(p, label, trackClass) {
+  const dims = hexDims(p.name);
+  const size = dims ? ` width="${dims.width}" height="${dims.height}"` : "";
+  const cls = trackClass ? ` ${trackClass}` : "";
+  return `<article class="lcard lcard-h" id="${p.name}">
   <div class="lside">
     <img class="lcover lcover-hex" src="${esc(versionedUrl(hexPath(p)))}" alt="${esc(p.name)} hex sticker"${size} loading="lazy" decoding="async">
     ${actions(p)}
   </div>
   <div class="lbody">
-    <p class="ltrack">Flagship</p>
+    <p class="ltrack${cls}">${label}</p>
     <h3><a href="${esc(docsUrl(p))}">${esc(p.name)}</a></h3>
     <p class="lout">${esc(p.tagline)}</p>
     ${metaLine(p)}
@@ -227,6 +233,12 @@ function card(p) {
     ${detailsBox(p)}
   </div>
 </article>`;
+}
+
+function card(p) {
+  if (isHexCard(p)) {
+    const flagship = p.track === "flagship";
+    return hexCard(p, flagship ? "Flagship" : "Utility", flagship ? "" : "util");
   }
 
   if (p.track === "archived") {
@@ -258,7 +270,7 @@ export function renderSections(pkgs) {
   return SECTIONS.map((sec) => {
     const items = pkgs.filter((p) => p.category === sec.id);
     if (!items.length) return "";
-    const grid = items.some((p) => p.track === "flagship") ? "lgrid lgrid-h" : "lgrid";
+    const grid = items.some(isHexCard) ? "lgrid lgrid-h" : "lgrid";
     return `<section id="${sec.id}">
   <h2>${sec.title}</h2>
   <div class="${grid}">
