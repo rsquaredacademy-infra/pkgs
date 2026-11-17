@@ -1,0 +1,11 @@
+# Repository files that are not part of the public site.
+/AGENTS.md         /404.html   404!
+/CLAUDE.md         /404.html   404!
+/GEMINI.md         /404.html   404!
+/README.md         /404.html   404!
+/CONTRIBUTING.md   /404.html   404!
+/package.json      /404.html   404!
+/package-lock.json /404.html   404!
+/build.mjs         /404.html   404!
+/check.mjs         /404.html   404!
+/hash.mjs          /404.html   404!
