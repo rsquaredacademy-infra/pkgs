@@ -7,7 +7,7 @@ import { loadCatalog, validate } from "./build.mjs";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 
-// LinkedIn answers bots with HTTP 999 ("request blocked"); the URL itself is valid.
+// LinkedIn answers bots with HTTP 999 ("request blocked") or 429 (rate limit); the URL itself is valid.
 const BOT_BLOCK_HOSTS = ["www.linkedin.com"];
 
 async function checkUrl(url) {
@@ -23,8 +23,8 @@ async function checkUrl(url) {
       if (res.status < 400) return { url, ok: true, status: res.status };
       last = `HTTP ${res.status}`;
       const host = new URL(url).hostname;
-      if (res.status === 999 && BOT_BLOCK_HOSTS.includes(host)) {
-        return { url, ok: true, status: "999 (bot-blocked, treated as ok)" };
+      if ((res.status === 999 || res.status === 429) && BOT_BLOCK_HOSTS.includes(host)) {
+        return { url, ok: true, status: `${res.status} (bot-blocked, treated as ok)` };
       }
     } catch (e) {
       last = e.name === "TimeoutError" ? "timeout" : e.message;
